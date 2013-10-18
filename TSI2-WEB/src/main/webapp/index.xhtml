@@ -4,13 +4,27 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>PRUEBAS TSI2</title>
+        
+        <style>
+            .ui-lightbox-content{
+                background-color: #fff;
+            }            
+        </style>
+        
     </h:head>
     <h:body>
         
-        Hello from CDI: #{helloTSICDIController.hello}
+        <h3>Hello from CDI:</h3>#{helloTSICDIController.hello}
         <br></br>
-        Hello from JSF BEAN: #{helloTSIJsfBeanController.hello}
+        <h3>Hello from JSF BEAN:</h3>#{helloTSIJsfBeanController.hello}
+        <br></br>
+        <h3>Hello from REST Service:</h3>  
+        <p:lightBox iframe="true" >  
+            <h:outputLink value="http://localhost:8080/TSI2-WEB/resources/sayHello">  
+                <h:outputText value="Response from REST service"/>  
+            </h:outputLink>  
+        </p:lightBox>  
         
     </h:body>
 </html>
